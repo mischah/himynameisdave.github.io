@@ -1,0 +1,241 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:900,400,700,400italic,300italic,500,100italic,500italic,300,700italic,100,900italic);
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+form,
+label,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+canvas,
+footer,
+header,
+menu,
+nav {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+body,
+html {
+  margin: 0;
+  font-family: 'Roboto', 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
+  height: 100%;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 25.88854382px;
+  color: #fff;
+}
+ol,
+ul {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+}
+input[type="text"],
+input[type="number"],
+input[type="password"],
+textarea,
+select {
+  position: relative;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  height: auto;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+svg {
+  overflow: visible;
+}
+input[type="submit"],
+button {
+  outline: none;
+}
+input[type="submit"]:focus,
+button:focus {
+  outline: none;
+}
+a {
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  color: #ffc107;
+}
+a:hover {
+  color: #ffce3a;
+}
+.ib {
+  display: inline-block;
+  vertical-align: middle;
+}
+.wrap {
+  height: 100%;
+  position: relative;
+}
+.wrap .bloc {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.wrap .key-img {
+  background-image: url('../img/turanna-bg-1440.jpg');
+  z-index: 100;
+}
+.wrap .key-img .scroll-dir {
+  text-align: center;
+  position: absolute;
+  width: 200px;
+  margin-left: -100px;
+  left: 50%;
+  top: 80px;
+  -webkit-transition: opacity 1.5s ease;
+  -moz-transition: opacity 1.5s ease;
+  -o-transition: opacity 1.5s ease;
+  transition: opacity 1.5s ease;
+  opacity: 1;
+  color: #fff;
+  text-shadow: 0 0 5px #333;
+}
+.wrap .opaque-img {
+  background-image: url('../img/turanna-bg-op-1440.jpg');
+  z-index: 200;
+  opacity: 0;
+}
+.wrap .opaque-img .jumbo {
+  width: 320px;
+  margin: 25% auto 0;
+}
+.wrap .opaque-img .jumbo h3,
+.wrap .opaque-img .jumbo h1 {
+  color: #fff;
+  text-shadow: 0 0 5px #333;
+  display: inline-block;
+  vertical-align: bottom;
+  letter-spacing: -0.5px;
+}
+.wrap .opaque-img .jumbo h3 {
+  font-weight: 100;
+  font-size: 20px;
+  line-height: 0;
+}
+.wrap .opaque-img .jumbo h1 {
+  font-weight: 100;
+  font-size: 80px;
+  line-height: 48px;
+}
+.wrap .opaque-img .jumbo hr.horz-bar {
+  border-width: 2px;
+  box-shadow: 0 0 5px #aaa;
+  text-align: left;
+  width: 0%;
+  margin: 20px 0 10px;
+}
+.wrap .opaque-img .jumbo .info {
+  color: #fff;
+  text-shadow: 0 0 5px #333;
+  font-weight: 100;
+}
+.content-area {
+  height: 2000px;
+  padding-top: 65%;
+  background-color: #3f51b5;
+  text-align: center;
+}
+.content-area .about {
+  padding: 50px 0;
+}
+.content-area .about h2 {
+  width: 360px;
+  margin: 0 auto 30px;
+  line-height: 1;
+}
+.content-area .about p {
+  width: 340px;
+  margin: 10px auto;
+  font-size: 14px;
+  line-height: 22.65247584px;
+  font-weight: 100;
+}
+.content-area .funfacts {
+  margin: 225px auto 0;
+}
+.content-area .funfacts #lastfm,
+.content-area .funfacts #tweetFetch,
+.content-area .funfacts #github {
+  padding: 20px;
+  border-left: 1px solid #fff;
+  text-align: left;
+}
+.content-area .funfacts #lastfm:first-child,
+.content-area .funfacts #tweetFetch:first-child,
+.content-area .funfacts #github:first-child {
+  border: none;
+}
+.content-area .funfacts #lastfm h4,
+.content-area .funfacts #tweetFetch h4,
+.content-area .funfacts #github h4 {
+  margin: 0 0 10px;
+  font-weight: 100;
+  font-size: 25px;
+}
+.content-area .funfacts #lastfm .album-art {
+  background-color: #ddd;
+  min-height: 80px;
+  width: 25%;
+  display: inline-block;
+  vertical-align: top;
+}
+.content-area .funfacts #lastfm .info {
+  margin: 0 0 0 10px;
+  display: inline-block;
+  vertical-align: top;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  height: 100px;
+  background: lime;
+}
