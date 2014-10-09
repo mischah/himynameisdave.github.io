@@ -1,4 +1,45 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:900,400,700,400italic,300italic,500,100italic,500italic,300,700italic,100,900italic);
+@import url(http://fonts.googleapis.com/css?family=Lato:100,900);
+@-webkit-keyframes wobble {
+  0% {
+    -webkit-transform: none;
+    transform: none;
+  }
+  33% {
+    -webkit-transform: translate3d(1%, 0, 0) rotate3d(0, 0, 1, 1deg);
+    transform: translate3d(1%, 0, 0) rotate3d(0, 0, 1, 1deg);
+  }
+  66% {
+    -webkit-transform: translate3d(-1%, 0, 0) rotate3d(0, 0, 1, -1deg);
+    transform: translate3d(-1%, 0, 0) rotate3d(0, 0, 1, -1deg);
+  }
+  100% {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes wobble {
+  0% {
+    -webkit-transform: none;
+    transform: none;
+  }
+  33% {
+    -webkit-transform: translate3d(1%, 0, 0) rotate3d(0, 0, 1, 1deg);
+    transform: translate3d(1%, 0, 0) rotate3d(0, 0, 1, 1deg);
+  }
+  66% {
+    -webkit-transform: translate3d(-1%, 0, 0) rotate3d(0, 0, 1, -1deg);
+    transform: translate3d(-1%, 0, 0) rotate3d(0, 0, 1, -1deg);
+  }
+  100% {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+.wobble {
+  -webkit-animation-name: wobble;
+  animation-name: wobble;
+}
 html,
 body,
 div,
@@ -52,12 +93,12 @@ section {
 body,
 html {
   margin: 0;
-  font-family: 'Roboto', 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Lato', 'Roboto', 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
   height: 100%;
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 900;
   line-height: 25.88854382px;
-  color: #fff;
+  color: #333333;
 }
 ol,
 ul {
@@ -92,150 +133,82 @@ input[type="submit"]:focus,
 button:focus {
   outline: none;
 }
-a {
-  -webkit-transition: all 0.25s ease;
-  -moz-transition: all 0.25s ease;
-  -o-transition: all 0.25s ease;
-  transition: all 0.25s ease;
-  color: #ffc107;
-}
-a:hover {
-  color: #ffce3a;
-}
-.ib {
-  display: inline-block;
-  vertical-align: middle;
-}
-.wrap {
-  height: 100%;
-  position: relative;
-}
-.wrap .bloc {
-  position: absolute;
-  top: 0;
-  left: 0;
+.slide {
   height: 100%;
   width: 100%;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
+  background: #ffc107;
+  position: relative;
+}
+.slide:nth-of-type(even) {
+  background: #333333;
+  color: #ffc107;
+}
+.slide .face {
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+  background: url('../assets/face.jpg') no-repeat 50% 50%;
   background-size: cover;
-}
-.wrap .key-img {
-  background-image: url('../img/turanna-bg-1440.jpg');
-  z-index: 100;
-}
-.wrap .key-img .scroll-dir {
-  text-align: center;
+  border: 10px solid #333333;
   position: absolute;
-  width: 200px;
-  margin-left: -100px;
   left: 50%;
-  top: 80px;
-  -webkit-transition: opacity 1.5s ease;
-  -moz-transition: opacity 1.5s ease;
-  -o-transition: opacity 1.5s ease;
-  transition: opacity 1.5s ease;
-  opacity: 1;
-  color: #fff;
-  text-shadow: 0 0 5px #333;
+  margin-left: -150px;
+  top: -50%;
+  -ms-transform: scale(0.5);
+  /* IE 9 */
+  -webkit-transform: scale(0.5);
+  /* Chrome, Safari, Opera */
+  transform: scale(0.5);
+  box-shadow: 0 0px 5px 0px rgba(51, 51, 51, 0.6);
+  -webkit-transition: all 0.26s ease;
+  -moz-transition: all 0.26s ease;
+  -o-transition: all 0.26s ease;
+  transition: all 0.26s ease;
 }
-.wrap .opaque-img {
-  background-image: url('../img/turanna-bg-op-1440.jpg');
-  z-index: 200;
-  opacity: 0;
+.slide .face:hover {
+  box-shadow: 0 3px 10px 1px rgba(51, 51, 51, 0.7);
+  -ms-transform: scale(1.025);
+  /* IE 9 */
+  -webkit-transform: scale(1.025);
+  /* Chrome, Safari, Opera */
+  transform: scale(1.025);
+  -ms-transform: rotate(-3deg);
+  /* IE 9 */
+  -webkit-transform: rotate(-3deg);
+  /* Chrome, Safari, Opera */
+  transform: rotate(-3deg);
 }
-.wrap .opaque-img .jumbo {
-  width: 320px;
-  margin: 25% auto 0;
-}
-.wrap .opaque-img .jumbo h3,
-.wrap .opaque-img .jumbo h1 {
-  color: #fff;
-  text-shadow: 0 0 5px #333;
-  display: inline-block;
-  vertical-align: bottom;
-  letter-spacing: -0.5px;
-}
-.wrap .opaque-img .jumbo h3 {
-  font-weight: 100;
-  font-size: 20px;
-  line-height: 0;
-}
-.wrap .opaque-img .jumbo h1 {
-  font-weight: 100;
-  font-size: 80px;
-  line-height: 48px;
-}
-.wrap .opaque-img .jumbo hr.horz-bar {
-  border-width: 2px;
-  box-shadow: 0 0 5px #aaa;
-  text-align: left;
-  width: 0%;
-  margin: 20px 0 10px;
-}
-.wrap .opaque-img .jumbo .info {
-  color: #fff;
-  text-shadow: 0 0 5px #333;
-  font-weight: 100;
-}
-.content-area {
-  height: 2000px;
-  padding-top: 65%;
-  background-color: #3f51b5;
-  text-align: center;
-}
-.content-area .about {
-  padding: 50px 0;
-}
-.content-area .about h2 {
-  width: 360px;
-  margin: 0 auto 30px;
-  line-height: 1;
-}
-.content-area .about p {
-  width: 340px;
-  margin: 10px auto;
-  font-size: 14px;
-  line-height: 22.65247584px;
-  font-weight: 100;
-}
-.content-area .funfacts {
-  margin: 225px auto 0;
-}
-.content-area .funfacts #lastfm,
-.content-area .funfacts #tweetFetch,
-.content-area .funfacts #github {
-  padding: 20px;
-  border-left: 1px solid #fff;
-  text-align: left;
-}
-.content-area .funfacts #lastfm:first-child,
-.content-area .funfacts #tweetFetch:first-child,
-.content-area .funfacts #github:first-child {
-  border: none;
-}
-.content-area .funfacts #lastfm h4,
-.content-area .funfacts #tweetFetch h4,
-.content-area .funfacts #github h4 {
-  margin: 0 0 10px;
-  font-weight: 100;
-  font-size: 25px;
-}
-.content-area .funfacts #lastfm .album-art {
-  background-color: #ddd;
-  min-height: 80px;
-  width: 25%;
-  display: inline-block;
-  vertical-align: top;
-}
-.content-area .funfacts #lastfm .info {
-  margin: 0 0 0 10px;
-  display: inline-block;
-  vertical-align: top;
-}
-footer {
+.slide .pos {
   position: absolute;
-  bottom: 0;
-  height: 100px;
-  background: lime;
+  text-align: center;
+  top: 60%;
+  width: 100%;
+}
+.slide .pos h1#hmnid {
+  font-weight: bold;
+  margin-bottom: 24px;
+  -ms-transform: scale(0.5);
+  /* IE 9 */
+  -webkit-transform: scale(0.5);
+  /* Chrome, Safari, Opera */
+  transform: scale(0.5);
+  opacity: 0;
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  cursor: default;
+}
+.slide .pos h2#info {
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -ms-transform: scale(0.5);
+  /* IE 9 */
+  -webkit-transform: scale(0.5);
+  /* Chrome, Safari, Opera */
+  transform: scale(0.5);
+  opacity: 0;
+  cursor: default;
 }

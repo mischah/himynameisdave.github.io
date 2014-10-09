@@ -1,106 +1,66 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html ng-app="app">
 <head>
 
-	<title>Dave Lunny | Front-end Developer/UI Designer</title>
+	<title>Hi, my name is Dave</title>
 	<meta charset="UTF-8">
 
-	<meta name="description" content="The work of Toronto-based web developer Dave Lunny">
-	<meta name="keywords" content="web development, Toronto, front-end developer, UI Design, UX Design">
+	<meta name="description" content="I’m a front-end developer and UI designer
+from Toronto, Ontario.">
+	<meta name="keywords" content="web developer, Toronto, UI design, Angular.js, Bootstrap, CSS, HTML5, web design, development">
 	<meta name="author" content="Dave Lunny">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-	<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css" />
-	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<!--Mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--Mobile - No Zooming-->
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+
+
+	<!--Angular-->
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
+
+
+	<!--jQuery & Bootstrap-->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	
+
+	<!--GSAP-->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"/></script>
+	<!--Optional GSAP stuff-->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/easing/EasePack.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script><!--This guy is where most of the good stuff is-->
+
+
+	<!--APP.JS-->
+	<script type="text/javascript" src="js/app.js"></script>
+	
+
+	<!--Font Awesome/Bootstrap CSS-->
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
+
+	
+	<!--Styles-->
 	<link rel="stylesheet" type="text/css" href="css/style.css"	/>
 
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.js"></script>
-	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/tweetFetch.js"></script>
-	<script type="text/javascript" src="js/script.js"></script>
-
-
-
 </head>
-<body>
-
-<div class="wrap">
-	<div class="bloc key-img">
-
-		<div class="scroll-dir">
-			scroll down to view
-		</div>
-			
-	</div>	
-	<div class="bloc opaque-img">
-		<div class="jumbo">
-			<h3>Hi, my name is</h3>
-			<h1>Dave</h1>
-			<hr class="horz-bar">
-
-			<div class="info">
-				web developer/ui designer from toronto, on.
-			</div>
-		</div>
+<body ng-controller="Controller">
+	
+	<div class="slide">
+		<div ng-include="'partials/section01.html'"></div>
 	</div>
 
-	<div class="content-area">
-		
-		<div class="container-fluid about">
-			<div class="row-fluid">
+	<div class="slide">
+		<div ng-include="'partials/section02.html'"></div>
+	</div>
 
-				<div class="col-sm-12">
-						
-					<h2>I make stuff for the web. It's super fun.</h2>
-
-					<p>
-						I work at an amazing education technology startup called <a href="http://vretta.com">Vretta</a>. We build all kinds of awesome online learning resources.
-					</p>
-					<p>
-						In my spare time, I read web development articles and mess around with emerging web technologies.
-					</p>
-				</div>
-			</div>
-		</div>
-		<div class="container-fluid funfacts">
-			<div class="row-fluid">
-
-				<div id="github" class="col-sm-4">
-					<h4>Git at me on the githubs</h4>
-				</div>
-
-				<div id="tweetFetch" class="col-sm-4">
-					<h4>Follow on twitter</h4>
-					<div class="ib">
-					</div>
-					<div class="ib">
-					</div>
-				</div>
-
-				<div id="lastfm" class="col-sm-4">
-					<h4>Last played song:</h4>
-
-					<div id="album-art" class="album-art">
-					</div>
-					<div class="info">
-						<div id="track" class="track">
-						</div>
-						<div id="artist" class="artist">
-						</div>	
-						<div id="album" class="album">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>	
-
-	<footer>
-		Dave Lunny
-	</footer>
-</div>
-	
+	<div class="slide">
+		<div ng-include="'partials/section03.html'"></div>
+	</div>
 
 </body>
 </html>
