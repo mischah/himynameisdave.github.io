@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html ng-app="app">
+<head>
+
+	<title>Hi, my name is Dave</title>
+	<meta charset="UTF-8">
+
+	<meta name="description" content="I’m a front-end developer and UI designer
+from Toronto, Ontario.">
+	<meta name="keywords" content="web developer, Toronto, UI design, Angular.js, Bootstrap, CSS, HTML5, web design, development">
+	<meta name="author" content="Dave Lunny">
+
+
+	<!--Mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--Mobile - No Zooming-->
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+
+
+	<!--Angular-->
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
+
+
+	<!--jQuery & Bootstrap-->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	
+
+	<!--GSAP-->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"/></script>
+	<!--Optional GSAP stuff-->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/easing/EasePack.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script><!--This guy is where most of the good stuff is-->
+
+
+	<!--APP.JS-->
+	<script type="text/javascript" src="js/app.js"></script>
+	
+
+	<!--Font Awesome/Bootstrap CSS-->
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
+
+	
+	<!--Styles-->
+	<link rel="stylesheet" type="text/css" href="css/style.css"	/>
+
+</head>
+<body ng-controller="Controller">
+	
+	<div class="slide">
+		<div ng-include="'partials/section01.html'"></div>
+	</div>
+
+	<div class="slide">
+		<div ng-include="'partials/section02.html'"></div>
+	</div>
+
+	<div class="slide">
+		<div ng-include="'partials/section03.html'"></div>
+	</div>
+
+</body>
+</html>
