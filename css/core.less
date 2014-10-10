@@ -1,6 +1,6 @@
 //      The Dave Lunny Core Less Library
 //           - - - - - - - - - - -    
-//                  v.0.2.2
+//                  v.0.2.3
 //           - - - - - - - - - - -
 //
 //                 LICENSE:        
@@ -259,6 +259,13 @@ input[type="submit"], button { outline: none; &:focus{ outline: none; } }
   .box-sizing();
   .border-radius(100%);
 }
+.mauto{
+  margin: 0 auto;
+}
+.mauto(@topBottom){
+  margin: @topBottom auto;
+}
+
 .rel {
   position: relative;
 }

@@ -142,6 +142,7 @@ button:focus {
 .slide:nth-of-type(even) {
   background: #333333;
   color: #ffc107;
+  height: 110%;
 }
 .slide .face {
   width: 300px;
@@ -151,38 +152,35 @@ button:focus {
   background-size: cover;
   border: 10px solid #333333;
   position: absolute;
-  left: 50%;
+  left: -50%;
   margin-left: -150px;
-  top: -50%;
-  -ms-transform: scale(0.5);
-  /* IE 9 */
-  -webkit-transform: scale(0.5);
-  /* Chrome, Safari, Opera */
-  transform: scale(0.5);
+  top: 10%;
   box-shadow: 0 0px 5px 0px rgba(51, 51, 51, 0.6);
-  -webkit-transition: all 0.26s ease;
-  -moz-transition: all 0.26s ease;
-  -o-transition: all 0.26s ease;
-  transition: all 0.26s ease;
+  -webkit-transition: box-shadow 0.26s ease;
+  -moz-transition: box-shadow 0.26s ease;
+  -o-transition: box-shadow 0.26s ease;
+  transition: box-shadow 0.26s ease;
 }
 .slide .face:hover {
   box-shadow: 0 3px 10px 1px rgba(51, 51, 51, 0.7);
-  -ms-transform: scale(1.025);
-  /* IE 9 */
-  -webkit-transform: scale(1.025);
-  /* Chrome, Safari, Opera */
-  transform: scale(1.025);
-  -ms-transform: rotate(-3deg);
-  /* IE 9 */
-  -webkit-transform: rotate(-3deg);
-  /* Chrome, Safari, Opera */
-  transform: rotate(-3deg);
+}
+@media screen and (max-height: 600px) {
+  .slide .face {
+    width: 225px;
+    height: 225px;
+    margin-left: -112.5px;
+  }
 }
 .slide .pos {
   position: absolute;
   text-align: center;
   top: 60%;
   width: 100%;
+}
+@media screen and (max-height: 450px) {
+  .slide .pos {
+    top: 70%;
+  }
 }
 .slide .pos h1#hmnid {
   font-weight: bold;
@@ -198,6 +196,13 @@ button:focus {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
   cursor: default;
+  font-size: 36px;
+}
+@media screen and (max-height: 450px) {
+  .slide .pos h1#hmnid {
+    font-size: 28.8px;
+    margin-bottom: 12px;
+  }
 }
 .slide .pos h2#info {
   -webkit-animation-duration: 0.7s;
@@ -211,4 +216,87 @@ button:focus {
   transform: scale(0.5);
   opacity: 0;
   cursor: default;
+  font-size: 30px;
+}
+@media screen and (max-height: 450px) {
+  .slide .pos h2#info {
+    font-size: 24px;
+  }
+}
+h3#skills-header {
+  text-align: center;
+  font-size: 36px;
+  line-height: 58.2492236px;
+  font-weight: 900;
+  padding-top: 60px;
+}
+p.napoleon {
+  text-align: center;
+  max-width: 650px;
+  font-weight: 100;
+  font-size: 20px;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 48px;
+}
+p.napoleon:before {
+  position: absolute;
+  font-size: 78px;
+  font-weight: 900;
+  top: 24px;
+  content: '\201C';
+  left: -24px;
+}
+p.napoleon::before {
+  position: absolute;
+  font-size: 78px;
+  font-weight: 900;
+  top: 24px;
+  content: '\201C';
+  left: -24px;
+}
+p.napoleon:after {
+  position: absolute;
+  font-size: 78px;
+  font-weight: 900;
+  top: 24px;
+  content: '\201D';
+  right: -24px;
+}
+p.napoleon::after {
+  position: absolute;
+  font-size: 78px;
+  font-weight: 900;
+  top: 24px;
+  content: '\201D';
+  right: -24px;
+}
+p.napoleon span#quoter {
+  display: block;
+  text-align: right;
+  font-size: 30px;
+  margin-top: 12px;
+}
+section#skills {
+  margin: 0 auto;
+  margin-top: 72px;
+  max-width: 0px;
+}
+section#skills .skillbar {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  margin: 8px auto;
+  -webkit-transition: background 0.65s ease;
+  -moz-transition: background 0.65s ease;
+  -o-transition: background 0.65s ease;
+  transition: background 0.65s ease;
+  background: #ffc107;
+  color: #333333;
+  border-radius: 8px;
+  font-weight: 900;
+  font-size: 18px;
+}
+section#skills .skillbar:hover {
+  background: #ffd559;
 }

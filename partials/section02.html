@@ -1,0 +1,16 @@
+<h3 id="skills-header">Skills</h3>
+<p class="napoleon">
+	"You know, like nunchuku skills, bow hunting skills, computer hacking skills...<br/>
+	Girls only want boyfriends who have great skills..."
+
+	<span id="quoter">- Napoleon Dynamite</span>
+</p>
+
+
+<section id="skills" ng-style="{ width : (scrollSkills)+'%' }">
+	<div 	class="skillbar" 
+			ng-repeat="skill in skills"
+			ng-style="{ width : (skill.level*10)+'%' }">
+		{{skill.skill}}
+	</div>
+</section>

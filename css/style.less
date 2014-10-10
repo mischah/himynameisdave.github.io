@@ -4,51 +4,27 @@
 
 ///Stupid anim stuff
 @-webkit-keyframes wobble {
-  0% {
-    -webkit-transform: none;
-            transform: none;
-  }
-
-
-
-  33% {
-    -webkit-transform: translate3d(1%, 0, 0) rotate3d(0, 0, 1, 1deg);
-            transform: translate3d(1%, 0, 0) rotate3d(0, 0, 1, 1deg);
-  }
-
-
-  66% {
-    -webkit-transform: translate3d(-1%, 0, 0) rotate3d(0, 0, 1, -1deg);
-            transform: translate3d(-1%, 0, 0) rotate3d(0, 0, 1, -1deg);
-  }
-
-
-  100% {
-    -webkit-transform: none;
-            transform: none;
-  }
+  0% { -webkit-transform: none;
+            transform: none;}
+  33% { -webkit-transform: translate3d(1%, 0, 0) rotate3d(0, 0, 1, 1deg);
+            transform: translate3d(1%, 0, 0) rotate3d(0, 0, 1, 1deg);}
+  66% { -webkit-transform: translate3d(-1%, 0, 0) rotate3d(0, 0, 1, -1deg);
+            transform: translate3d(-1%, 0, 0) rotate3d(0, 0, 1, -1deg);}
+  100% { -webkit-transform: none;
+            transform: none;}
 }
 
 @keyframes wobble {
-  0% {
-    -webkit-transform: none;
-            transform: none;
-  }
+  0% { -webkit-transform: none;
+            transform: none;}
+  33% { -webkit-transform: translate3d(1%, 0, 0) rotate3d(0, 0, 1, 1deg);
+            transform: translate3d(1%, 0, 0) rotate3d(0, 0, 1, 1deg); }
 
-  33% {
-    -webkit-transform: translate3d(1%, 0, 0) rotate3d(0, 0, 1, 1deg);
-            transform: translate3d(1%, 0, 0) rotate3d(0, 0, 1, 1deg);
-  }
+  66% { -webkit-transform: translate3d(-1%, 0, 0) rotate3d(0, 0, 1, -1deg);
+            transform: translate3d(-1%, 0, 0) rotate3d(0, 0, 1, -1deg);}
 
-  66% {
-    -webkit-transform: translate3d(-1%, 0, 0) rotate3d(0, 0, 1, -1deg);
-            transform: translate3d(-1%, 0, 0) rotate3d(0, 0, 1, -1deg);
-  }
-
-  100% {
-    -webkit-transform: none;
-            transform: none;
-  }
+  100% { -webkit-transform: none;
+            transform: none;}
 }
 
 .wobble {
@@ -113,7 +89,8 @@ input[type="submit"], button { outline: none; &:focus{ outline: none; } }
 
 	&:nth-of-type(even){
 		background: 	@offBlack;
-		color:			@amber;
+		color:			   @amber;
+    height: 110%;
 	}
 
 	.face {
@@ -125,26 +102,35 @@ input[type="submit"], button { outline: none; &:focus{ outline: none; } }
 		border: 		10px solid @offBlack;
 
 		.abs;
-		left:			50%;
-		margin-left: 	-150px;
-		top:			-50%;
-		// top:			10%; this is where GSAP moves top
-		.scale(0.5);//GSAP fixes this.
-		box-shadow: 	0 0px 5px 0px rgba(51,51,51,0.6);
+		left:			-50%;//GSAP
+    // left:     50%;
+		margin-left: 	0 - (300px / 2);
+		top:			10%;
+    box-shadow:   0 0px 5px 0px rgba(51,51,51,0.6);
 
-		.trans(all, 0.26s);
+		.trans(box-shadow, 0.26s);
 		&:hover {
 			box-shadow: 	0 3px 10px 1px rgba(51,51,51,0.7);
-			.scale(1.025);
-			.rotate(-3deg);
+			// .scale(1.025);
+			// .rotate(-3deg);
 		}
-	}
+	  @media screen and ( max-height: 600px ){
+      width:          225px;
+      height:         225px;
+      margin-left:    0 - (225px / 2);
+    }
+
+
+  }
 
 	.pos {
 		.abs;
 		.center;
 		top: 		60%;
 		width: 		100%;
+    @media screen and ( max-height: 450px ){
+      top:    70%;
+    }
 
 		h1#hmnid {
 			.bold;
@@ -153,22 +139,104 @@ input[type="submit"], button { outline: none; &:focus{ outline: none; } }
 			opacity: 0;//GSAP
 			.anim(0.7s);
 			cursor: default;
+      font-size:    36px;
+
+      @media screen and ( max-height: 450px ){
+        font-size:  36px / 1.25;
+        .mb2;
+      }
+
 		}
 		h2#info {
 			.anim(0.7s);
 			.scale(0.5);//GSAP
 			opacity: 0;//GSAP
 			cursor: default;
+      font-size:    30px;
+       @media screen and ( max-height: 450px ){
+        font-size:  30px / 1.25;
+
+      }
 		}
 	}
-
-
-
 
 }
 
 
+h3#skills-header {
+
+  text-align: center;
+  font-size:    36px;
+  line-height:  36px * @golden-ratio;
+  font-weight:  900;
+
+  .pt10;
 
 
+}
+
+p.napoleon {
+  text-align: center;
+  max-width:  650px;
+  font-weight:  100;
+  font-size:    20px;
+  .rel;
+  .mauto;
+  .mt8;
+
+  @qmargin: -24px;
+  .quo(){
+    .abs;
+    font-size:    78px;
+    font-weight:  900;
+    top:  24px;
+  }
+  .before(){
+    .quo();
+    content:      '\201C';
+    left: @qmargin;
+  }
+  .after(){
+    .quo();
+    content: '\201D';
+    right:@qmargin;
+  }
+  &:before{ .before(); }
+  &::before{ .before(); }
+  &:after{ .after(); }
+  &::after{ .after(); }
+
+
+  span#quoter {
+    display: block;
+    text-align: right;
+    font-size:    30px;
+    .mt2;
+  }
+}
+
+
+section#skills{
+  .mauto;
+  .mt12;
+  // max-width:    500px;GSAP
+  max-width:    0px;
+
+  .skillbar{
+    .pt2; .pb2;
+    .center;
+    .mauto(8px);
+    .trans(background, 0.65s);
+    background:     @amber;
+    color:          @offBlack;
+    border-radius:  8px;
+    font-weight:    900;
+    font-size:      18px;
+    &:hover{
+      background: lighten(@amber, 16%);
+    }
+  }
+
+}
 
 
