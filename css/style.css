@@ -286,11 +286,19 @@ section#skills .skillbar {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   margin: 8px auto;
   -webkit-transition: background 0.65s ease;
   -moz-transition: background 0.65s ease;
   -o-transition: background 0.65s ease;
   transition: background 0.65s ease;
+  overflow: hidden;
   background: #ffc107;
   color: #333333;
   border-radius: 8px;
@@ -298,5 +306,33 @@ section#skills .skillbar {
   font-size: 18px;
 }
 section#skills .skillbar:hover {
-  background: #ffd559;
+  background: #ffcb30;
+}
+section#skills .skillbar .skillName {
+  display: block;
+  height: 25px;
+  clip: text;
+}
+section#skills .skillbar .skillInfo {
+  display: none;
+  height: 0;
+  font-size: 17.25px;
+  font-weight: 100;
+  clip: text;
+}
+h4#contact {
+  text-align: center;
+  padding-top: 48px;
+  font-weight: 900;
+  font-size: 36px;
+}
+.dark-card {
+  padding: 48px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 48px;
+  color: #ffc107;
+  background: #333333;
+  width: 500px;
+  border-radius: 8px;
 }

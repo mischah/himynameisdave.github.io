@@ -224,19 +224,51 @@ section#skills{
 
   .skillbar{
     .pt2; .pb2;
-    .center;
+    .center; 
+    .clickable;
     .mauto(8px);
     .trans(background, 0.65s);
+    overflow: hidden;
     background:     @amber;
     color:          @offBlack;
     border-radius:  8px;
     font-weight:    900;
     font-size:      18px;
     &:hover{
-      background: lighten(@amber, 16%);
+      background: lighten(@amber, 8%);
     }
+
+    .skillName {
+      display: block;
+      height:   25px;
+      clip:     text;
+    }
+    .skillInfo{
+      display:  none;
+      height:   0;
+      font-size:  17.25px;
+      font-weight:  100;
+      clip:     text;
+    }
+
   }
 
 }
 
+
+h4#contact{
+  .center; .pt8;
+  font-weight:  900;
+  font-size:    36px;
+}
+.dark-card{
+  .pa8;
+  .center;
+  .mauto; .mt8;
+  color:          @amber;
+  background:     @offBlack;
+  width:          500px;
+  border-radius:  8px;  
+
+}
 

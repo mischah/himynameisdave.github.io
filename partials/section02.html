@@ -8,9 +8,17 @@
 
 
 <section id="skills" ng-style="{ width : (scrollSkills)+'%' }">
-	<div 	class="skillbar" 
-			ng-repeat="skill in skills"
-			ng-style="{ width : (skill.level*10)+'%' }">
-		{{skill.skill}}
+	<div 	ng-repeat="skill in skills"
+			class="skillbar" 
+			id="{{skill.id}}"
+			ng-style="{ width : (skill.level*10)+'%' }"
+			ng-click="swapSkillInfo(skill.id)">
+			
+		<div class="skillName">
+			{{skill.skill}}
+		</div>
+		<div class="skillInfo">
+			{{skill.info}}
+		</div>
 	</div>
 </section>
