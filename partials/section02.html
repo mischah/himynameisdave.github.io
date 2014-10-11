@@ -11,9 +11,10 @@
 	<div 	ng-repeat="skill in skills"
 			class="skillbar" 
 			id="{{skill.id}}"
-			ng-style="{ width : (skill.level*10)+'%' }"
 			ng-click="swapSkillInfo(skill.id)">
-			
+			<!-- ng-style="{ width : (skill.level*10)+'%' }" -->
+
+
 		<div class="skillName">
 			{{skill.skill}}
 		</div>

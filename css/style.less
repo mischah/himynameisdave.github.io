@@ -219,8 +219,8 @@ p.napoleon {
 section#skills{
   .mauto;
   .mt12;
-  // max-width:    500px;GSAP
-  max-width:    0px;
+  max-width:    600px;//GSAP
+  // max-width:    0px;
 
   .skillbar{
     .pt2; .pb2;
@@ -228,6 +228,7 @@ section#skills{
     .clickable;
     .mauto(8px);
     .trans(background, 0.65s);
+    width: 0%;
     overflow: hidden;
     background:     @amber;
     color:          @offBlack;
@@ -264,11 +265,35 @@ h4#contact{
 .dark-card{
   .pa8;
   .center;
-  .mauto; .mt8;
+  .mauto; .mt8; .mb4;
+  .trans(all, 0.28s);
   color:          @amber;
   background:     @offBlack;
   width:          500px;
   border-radius:  8px;  
+
+  &:hover{
+    width: 525px;
+    .pa9;
+  }
+
+
+  h2 {
+    font-size:    50px;
+    font-weight:    100;
+    text-align:     center;
+  }
+  a {
+        color: inherit;
+        text-decoration: none;
+        &:hover{
+          color:  inherit;
+          text-decoration: none;
+        }
+    }
+
+
+
 
 }
 

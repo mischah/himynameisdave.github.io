@@ -15,7 +15,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 });
 
 
-app.controller('MainCtrl', function ($scope, $window) {
+app.controller('MainCtrl', function ($scope, $window, $log) {
 
 	var h = $(window).height();
 	var animOccured = false;
@@ -23,7 +23,8 @@ app.controller('MainCtrl', function ($scope, $window) {
 		var s = $(window).scrollTop();
 		if(!animOccured){
 			if( (s/h*100) > 52  ){
-				TweenLite.to( $('section#skills'), 1.6, { maxWidth: "600px" });
+				$scope.skillsAnim();
+				// TweenLite.to( $('section#skills'), 1.6, { maxWidth: "600px" });
 				animOccured = true;
 			}
 		}
@@ -31,30 +32,24 @@ app.controller('MainCtrl', function ($scope, $window) {
 	});
 
 
-	function init(){
+	$scope.rollFace = function(){
+		var face 	= document.getElementById('face'), 
+			hmnid 	= document.getElementById('hmnid'), 
+			info 	= document.getElementById('info'); 
 
+		var tl = new TimelineMax();
+		//append a to() tween
+		tl.to(face, 1.7, {left:"50%", rotation: 360, ease: Back.easeOut });
+		tl.to(hmnid, 0.65, { scale: 1, opacity: 1, ease: Back.easeOut });
+		tl.to(info, 0.65, { scale: 1, opacity: 1, ease: Back.easeOut });
+	};
+
+	$scope.checkIfScrolldownNeeded = function(){
 		//quick check on load (cause they might not scroll right away)
 		if( ($(window).scrollTop() - $(window).height() * 100) > 52 && !animOccured){
-			TweenLite.to( $('section#skills'), 1.6, { maxWidth: "600px" });
+			$scope.skillsAnim();
 			animOccured = true;
-		}
-
-		setTimeout(function(){
-			var face = $('#face'), 
-				hmnid = $('#hmnid'), 
-				info = $('#info'); 
-
-			var tl = new TimelineMax();
-			//append a to() tween
-			tl.to(face, 1.7, {left:"50%", rotation: 360, ease: Back.easeOut });
-			tl.to(hmnid, 0.65, { scale: 1, opacity: 1, ease: Back.easeOut });
-			tl.to(info, 0.65, { scale: 1, opacity: 1, ease: Back.easeOut });
-
-		},100);
-
-
-
-
+		}	
 	};
 
 	$scope.swapInProgress = false;
@@ -69,7 +64,7 @@ app.controller('MainCtrl', function ($scope, $window) {
 				openText('skillName', skill);
 				closeText('skillInfo', skill);
 				$scope.swapInProgress = false;
-			},1800);
+			},1620);
 
 
 			function closeText(type, skill){
@@ -88,19 +83,35 @@ app.controller('MainCtrl', function ($scope, $window) {
 
 	};	
 
+	$scope.skillsAnim = function(){
+
+		//	SKILLS TIME LINE
+		var STL = new TimelineMax();
+
+		$.each( $scope.skills, function(i, val){
+			// var dur = (val.level/10) + 0.25;
+			// $log.log(dur);
+			dur = 0.85;
+			STL.to( $('#'+val.id), dur, { width: (val.level*10+'%'), ease: Elastic.easeOut });
+		});
+
+		STL.play();
+	};
+
+
 	//later move to le json
 	$scope.skills = [
 							{
 								"skill"	: 	"HTML5",
 								"id"	: 	"html",
 								"level"	: 	10,
-								"info"	: 	"Love and embrace the modern web, and respect it for the thing of beauty it is."
+								"info"	: 	"Just semantics is all..."
 							}
 						,	{
 								"skill"	: 	"CSS/LESS/SASS",
 								"id"	: 	"css",
 								"level"	: 	10,
-								"info" 	: 	"If you 'aint pre-processing your CSS, you 'aint livin."
+								"info" 	: 	"You name it, I pre-process it!"
 							}
 						,	{
 								"skill"	: 	"Angular.JS",
@@ -133,8 +144,21 @@ app.controller('MainCtrl', function ($scope, $window) {
 								"info"	: 	"\"So, you like JavaScript eh...\""
 							}
 					];
+			
+
+			var intr = setInterval(function(){
+				if(document.getElementById('face') === null){
+					console.log('Doing nothing since 2014!');
+				}else{
+					console.log(document.getElementById('face'));
+				  	$scope.rollFace();
+					$scope.checkIfScrolldownNeeded();
+					clearInterval(intr);
+				}
+			},15);
+			
+			
 
 
-	$(document).ready(init)
 
 });
