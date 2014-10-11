@@ -18,14 +18,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
 app.controller('MainCtrl', function ($scope, $window, $log) {
 
 	var h = $(window).height();
-	var animOccured = false;
+	$scope.animOccured = false;
 	$(window).scroll(function(){
 		var s = $(window).scrollTop();
-		if(!animOccured){
-			if( (s/h*100) > 52  ){
+		if(!$scope.animOccured){
+			if( (s/h*100) >= 52  ){
 				$scope.skillsAnim();
 				// TweenLite.to( $('section#skills'), 1.6, { maxWidth: "600px" });
-				animOccured = true;
+				$scope.animOccured = true;
 			}
 		}
 
@@ -46,9 +46,9 @@ app.controller('MainCtrl', function ($scope, $window, $log) {
 
 	$scope.checkIfScrolldownNeeded = function(){
 		//quick check on load (cause they might not scroll right away)
-		if( ($(window).scrollTop() - $(window).height() * 100) > 52 && !animOccured){
+		if( (($(window).scrollTop() - $(window).height() * 100) >= 52) && !$scope.animOccured){
 			$scope.skillsAnim();
-			animOccured = true;
+			$scope.animOccured = true;
 		}	
 	};
 
@@ -147,10 +147,7 @@ app.controller('MainCtrl', function ($scope, $window, $log) {
 			
 
 			var intr = setInterval(function(){
-				if(document.getElementById('face') === null){
-					console.log('Doing nothing since 2014!');
-				}else{
-					console.log(document.getElementById('face'));
+				if(document.getElementById('face') != null){
 				  	$scope.rollFace();
 					$scope.checkIfScrolldownNeeded();
 					clearInterval(intr);
