@@ -2,6 +2,12 @@
 //	(actual styles go here)
 
 
+@mediaSmall: 425px;
+@mediaMedium: 650px;
+@mediaLarge: 900px;
+@mediaXLarge: 1100px;
+
+
 ///Stupid anim stuff
 @-webkit-keyframes wobble {
   0% { -webkit-transform: none;
@@ -84,16 +90,30 @@ input[type="submit"], button { outline: none; &:focus{ outline: none; } }
 .slide{
 	height: 100%;
 	width: 	100%;
+  max-width:  100%;
 	background: @amber;
 	.rel;
 
 	&:nth-of-type(even){
 		background: 	@offBlack;
 		color:			   @amber;
-    height: 110%;
+    height: 120%;
+
+    @media screen and ( max-height : 620px ){ height: 140%; }
+    @media screen and ( max-height : 525px ){ height: 165%; }
+    @media screen and ( max-height : 425px ){ height: 185%; }
+
+
 	}
 
+
 	.face {
+    .smallface(){
+      width:          225px;
+      height:         225px;
+      margin-left:    0 - (225px / 2);
+    }
+
 		width: 			300px;
 		height:			300px;
 		border-radius: 	150px;
@@ -114,11 +134,8 @@ input[type="submit"], button { outline: none; &:focus{ outline: none; } }
 			// .scale(1.025);
 			// .rotate(-3deg);
 		}
-	  @media screen and ( max-height: 600px ){
-      width:          225px;
-      height:         225px;
-      margin-left:    0 - (225px / 2);
-    }
+	  @media screen and ( max-height: 600px ){ .smallface() }
+    @media screen and ( max-width: 550px ){ .smallface() }
 
 
   }
@@ -145,6 +162,11 @@ input[type="submit"], button { outline: none; &:focus{ outline: none; } }
         font-size:  36px / 1.25;
         .mb2;
       }
+      @media screen and ( max-width: 550px ){
+        font-size:  36px / 1.25;
+        .mb2; .pl1; .pr1;
+      }
+
 
 		}
 		h2#info {
@@ -155,7 +177,10 @@ input[type="submit"], button { outline: none; &:focus{ outline: none; } }
       font-size:    30px;
        @media screen and ( max-height: 450px ){
         font-size:  30px / 1.25;
-
+      }
+      @media screen and ( max-width: 550px ){
+        font-size:  30px / 1.25;
+        .pl1;.pr1;
       }
 		}
 	}
@@ -172,7 +197,9 @@ h3#skills-header {
 
   .pt10;
 
-
+  @media screen and (max-width:550px){  
+    .pt6;
+  }
 }
 
 p.napoleon {
@@ -184,12 +211,30 @@ p.napoleon {
   .mauto;
   .mt8;
 
+  @media screen and (max-width:750px){
+      max-width:  450px;
+    font-size:    19px;
+    .mt6;
+  }
+
+  @media screen and (max-width:550px){
+    max-width:    320px;
+    font-size:    15px;
+    .mt4;
+  }
+
+
+
   @qmargin: -24px;
   .quo(){
     .abs;
     font-size:    78px;
     font-weight:  900;
     top:  24px;
+    @media screen and (max-width:550px){
+      font-size:    60px;
+      top:          16px;
+    }
   }
   .before(){
     .quo();
@@ -212,15 +257,25 @@ p.napoleon {
     text-align: right;
     font-size:    30px;
     .mt2;
+    @media screen and (max-width:500px){
+      font-size:    26px;
+    }
   }
 }
 
 
 section#skills{
-  .mauto;
-  .mt12;
+  .mauto; .mt12;
   max-width:    600px;//GSAP
-  // max-width:    0px;
+
+  @media screen and ( max-width: 700px ){
+    .mt11;
+    max-width:    425px;
+  }
+  @media screen and ( max-width: 475px ){
+    .mt10;
+    max-width:    300px;
+  }
 
   .skillbar{
     .pt2; .pb2;
@@ -235,6 +290,13 @@ section#skills{
     border-radius:  8px;
     font-weight:    900;
     font-size:      18px;
+
+    @media screen and ( max-width: @mediaSmall ){
+      .pt1; .pb1;
+      font-size:      15px;
+      border-radius:  6px;
+    }
+
     &:hover{
       background: lighten(@amber, 8%);
     }
@@ -263,25 +325,40 @@ h4#contact{
   font-size:    36px;
 }
 .dark-card{
+  @baseWidth:     500px;
+  @medQue1:       (@baseWidth+100px);
   .pa8;
   .center;
   .mauto; .mt8; .mb4;
   .trans(all, 0.28s);
   color:          @amber;
   background:     @offBlack;
-  width:          500px;
+
+  width:          @baseWidth;
   border-radius:  8px;  
 
   &:hover{
-    width: 525px;
+    width: @baseWidth + 25px;
     .pa9;
+    @media screen and ( max-width: @medQue1 ){
+      // .pa5;
+      width: @baseWidth - 175px;
+    }
   }
 
+  @media screen and ( max-width: @medQue1 ){
+    .pa4; .mt4; .mb2;
+    width: @baseWidth - 200px;
+  }
 
   h2 {
     font-size:    50px;
     font-weight:    100;
     text-align:     center;
+
+    @media screen and ( max-width: @medQue1 ){
+      font-size:    30px;
+    }
   }
   a {
         color: inherit;

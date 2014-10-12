@@ -89,10 +89,10 @@ app.controller('MainCtrl', function ($scope, $window, $log) {
 		var STL = new TimelineMax();
 
 		$.each( $scope.skills, function(i, val){
-			// var dur = (val.level/10) + 0.25;
+			// var dur = (val.level/8);
 			// $log.log(dur);
-			dur = 0.85;
-			STL.to( $('#'+val.id), dur, { width: (val.level*10+'%'), ease: Elastic.easeOut });
+			dur = 1.875;
+			STL.to( $('#'+val.id), dur, { width: (val.level*10+'%'), ease: Elastic.easeOut}, "-=1.4");
 		});
 
 		STL.play();
@@ -147,12 +147,29 @@ app.controller('MainCtrl', function ($scope, $window, $log) {
 			
 
 			var intr = setInterval(function(){
+				var check1 = false, check2 = false;
 				if(document.getElementById('face') != null){
 				  	$scope.rollFace();
 					$scope.checkIfScrolldownNeeded();
+					check1 = true;
+				}
+				if(!$scope.animOccured){
+					var h = $(window).height(), 
+						s = $(window).scrollTop();
+						if( (s/h*100) >= 52  ){
+							$scope.skillsAnim();
+							$scope.animOccured = true;
+							check2 = true;
+						}
+				}else{
+					check2 = true;
+				}
+
+				if(check1 && check2){
 					clearInterval(intr);
 				}
-			},15);
+
+			},20);
 			
 			
 

@@ -136,13 +136,29 @@ button:focus {
 .slide {
   height: 100%;
   width: 100%;
+  max-width: 100%;
   background: #ffc107;
   position: relative;
 }
 .slide:nth-of-type(even) {
   background: #333333;
   color: #ffc107;
-  height: 110%;
+  height: 120%;
+}
+@media screen and (max-height: 620px) {
+  .slide:nth-of-type(even) {
+    height: 140%;
+  }
+}
+@media screen and (max-height: 525px) {
+  .slide:nth-of-type(even) {
+    height: 165%;
+  }
+}
+@media screen and (max-height: 425px) {
+  .slide:nth-of-type(even) {
+    height: 185%;
+  }
 }
 .slide .face {
   width: 300px;
@@ -165,6 +181,13 @@ button:focus {
   box-shadow: 0 3px 10px 1px rgba(51, 51, 51, 0.7);
 }
 @media screen and (max-height: 600px) {
+  .slide .face {
+    width: 225px;
+    height: 225px;
+    margin-left: -112.5px;
+  }
+}
+@media screen and (max-width: 550px) {
   .slide .face {
     width: 225px;
     height: 225px;
@@ -204,6 +227,14 @@ button:focus {
     margin-bottom: 12px;
   }
 }
+@media screen and (max-width: 550px) {
+  .slide .pos h1#hmnid {
+    font-size: 28.8px;
+    margin-bottom: 12px;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
 .slide .pos h2#info {
   -webkit-animation-duration: 0.7s;
   animation-duration: 0.7s;
@@ -223,12 +254,24 @@ button:focus {
     font-size: 24px;
   }
 }
+@media screen and (max-width: 550px) {
+  .slide .pos h2#info {
+    font-size: 24px;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
 h3#skills-header {
   text-align: center;
   font-size: 36px;
   line-height: 58.2492236px;
   font-weight: 900;
   padding-top: 60px;
+}
+@media screen and (max-width: 550px) {
+  h3#skills-header {
+    padding-top: 36px;
+  }
 }
 p.napoleon {
   text-align: center;
@@ -239,6 +282,20 @@ p.napoleon {
   margin: 0 auto;
   margin-top: 48px;
 }
+@media screen and (max-width: 750px) {
+  p.napoleon {
+    max-width: 450px;
+    font-size: 19px;
+    margin-top: 36px;
+  }
+}
+@media screen and (max-width: 550px) {
+  p.napoleon {
+    max-width: 320px;
+    font-size: 15px;
+    margin-top: 24px;
+  }
+}
 p.napoleon:before {
   position: absolute;
   font-size: 78px;
@@ -246,6 +303,12 @@ p.napoleon:before {
   top: 24px;
   content: '\201C';
   left: -24px;
+}
+@media screen and (max-width: 550px) {
+  p.napoleon:before {
+    font-size: 60px;
+    top: 16px;
+  }
 }
 p.napoleon::before {
   position: absolute;
@@ -255,6 +318,12 @@ p.napoleon::before {
   content: '\201C';
   left: -24px;
 }
+@media screen and (max-width: 550px) {
+  p.napoleon::before {
+    font-size: 60px;
+    top: 16px;
+  }
+}
 p.napoleon:after {
   position: absolute;
   font-size: 78px;
@@ -262,6 +331,12 @@ p.napoleon:after {
   top: 24px;
   content: '\201D';
   right: -24px;
+}
+@media screen and (max-width: 550px) {
+  p.napoleon:after {
+    font-size: 60px;
+    top: 16px;
+  }
 }
 p.napoleon::after {
   position: absolute;
@@ -271,16 +346,39 @@ p.napoleon::after {
   content: '\201D';
   right: -24px;
 }
+@media screen and (max-width: 550px) {
+  p.napoleon::after {
+    font-size: 60px;
+    top: 16px;
+  }
+}
 p.napoleon span#quoter {
   display: block;
   text-align: right;
   font-size: 30px;
   margin-top: 12px;
 }
+@media screen and (max-width: 500px) {
+  p.napoleon span#quoter {
+    font-size: 26px;
+  }
+}
 section#skills {
   margin: 0 auto;
   margin-top: 72px;
   max-width: 600px;
+}
+@media screen and (max-width: 700px) {
+  section#skills {
+    margin-top: 66px;
+    max-width: 425px;
+  }
+}
+@media screen and (max-width: 475px) {
+  section#skills {
+    margin-top: 60px;
+    max-width: 300px;
+  }
 }
 section#skills .skillbar {
   padding-top: 12px;
@@ -305,6 +403,14 @@ section#skills .skillbar {
   border-radius: 8px;
   font-weight: 900;
   font-size: 18px;
+}
+@media screen and (max-width: 425px) {
+  section#skills .skillbar {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 15px;
+    border-radius: 6px;
+  }
 }
 section#skills .skillbar:hover {
   background: #ffcb30;
@@ -346,10 +452,28 @@ h4#contact {
   width: 525px;
   padding: 54px;
 }
+@media screen and (max-width: 600px) {
+  .dark-card:hover {
+    width: 325px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .dark-card {
+    padding: 24px;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    width: 300px;
+  }
+}
 .dark-card h2 {
   font-size: 50px;
   font-weight: 100;
   text-align: center;
+}
+@media screen and (max-width: 600px) {
+  .dark-card h2 {
+    font-size: 30px;
+  }
 }
 .dark-card a {
   color: inherit;
