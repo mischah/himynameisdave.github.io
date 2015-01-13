@@ -117,7 +117,7 @@ app.controller('MainCtrl', function ($scope, $window, $log) {
 								"skill"	: 	"Angular.JS",
 								"id"	: 	"angular",
 								"level"	: 	6,
-								"info"  : 	"Superheroic Motor Vehicle Contoller"
+								"info"  : 	"Superheroic Motor Vehicle Controller"
 							}
 						,	{
 								"skill"	: 	"Photoshop/Illustrator",
